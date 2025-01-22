@@ -15,7 +15,6 @@ class Truck extends Vehicle implements AbleToTow {
   year: number;
   weight: number;
   topSpeed: number;
-  wheels: Wheel[];
   towingCapacity: number;
   // TODO: The properties should include vin, color, make, model, year, weight, top speed, wheels, and towing capacity
 
@@ -31,7 +30,6 @@ class Truck extends Vehicle implements AbleToTow {
     weight: number,
     topSpeed: number,
     towingCapacity: number,
-    wheels: Wheel[],
   ) {
     super();
     this.vin = vin;
@@ -41,11 +39,6 @@ class Truck extends Vehicle implements AbleToTow {
     this.year = year;
     this.weight = weight;
     this.topSpeed = topSpeed;
-    if (wheels.length !== 4) {
-      this.wheels = [new Wheel(), new Wheel(), new Wheel(), new Wheel()];
-    } else {
-      this.wheels = wheels;
-    }
     this.towingCapacity = towingCapacity;
   }
 
@@ -79,20 +72,6 @@ class Truck extends Vehicle implements AbleToTow {
     console.log(`Weight: ${this.weight} lbs`);
     console.log(`Top Speed: ${this.topSpeed} mph`);
     console.log(`Towing Capacity: ${this.towingCapacity} lbs`);
-    console.log(`Wheels: ${this.wheels.length}`);
-
-    console.log(
-      `Wheel 1: ${this.wheels[0].getDiameter} inch with a ${this.wheels[0].getTireBrand} tire`
-    );
-    console.log(
-      `Wheel 2: ${this.wheels[1].getDiameter} inch with a ${this.wheels[1].getTireBrand} tire`
-    );
-    console.log(
-      `Wheel 3: ${this.wheels[2].getDiameter} inch with a ${this.wheels[2].getTireBrand} tire`
-    );
-    console.log(
-      `Wheel 4: ${this.wheels[3].getDiameter} inch with a ${this.wheels[3].getTireBrand} tire`
-    );
   }
     // TODO: The details should include the VIN, make, model, year, weight, top speed, color, towing capacity, and wheels
 }
