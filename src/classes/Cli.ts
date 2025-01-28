@@ -113,6 +113,7 @@ class Cli {
           name: 'topSpeed',
           message: 'Enter Top Speed',
         },
+
       ])
       .then((answers) => {
         const car = new Car(
